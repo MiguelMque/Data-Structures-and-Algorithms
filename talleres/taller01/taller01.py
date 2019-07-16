@@ -1,90 +1,65 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
-Created on Mon Jul 15 22:10:31 2019
+@author Miguel Angel Correa - Pablo Buitrago
 
-@author: miguelmque
+Taller 01 estructura datos y algorítmos.
 """
 
-import math
-
+import math 
 
 class Coordinate(object):
-    
-    
     def __init__(self, x, y):
         self.x = x
         self.y = y
         
     def distance(self, other):
-        x_diff_sq = (self.x-other.x)**2
-        y_diff_sq = (self.x-other.x)**2
-        
-        return (x_diff_sq + y_diff_sq)**0.5
+        x_dif_sq = (self.x - other.x)**2
+        y_dif_sq = (self.y - other.y)**2
+        return (x_dif_sq + y_dif_sq)**0.5
     
+    def polarRadio(self):
+        return distance(self, Coordinate(0,0))
     
-    def radio(self):
-        
-        ori = Coordinate(0,0)
-        
-        r = self.distance(ori)
-        
-        return r
+    def polarAngle(self):
+        return math.atan(self.y/self.x)
     
-    def angle(self):
-        
-        return math.acos(self.x/self.radio)
+    def getX(self):
+        return self.x
     
-    
-    
+    def getY(self):
+        return self.y
     
 class Date(object):
-    
-    def __init__(self, d, m, y):
-        self.d = d
-        self.m = m
-        self.y = y
-    
-    def __str__(self):
+    def __init__(self, day, month, year):
+        self.day = day
+        self.month = month
+        self.year = year
         
-        return y + '-' + m + '-' + d
+    def toString(self):
+        return year+'-'+month+'-'+day
     
     def compare(self, other):
+        d1 = self.toString
+        d2 = other.toString
         
-       date1 = self.__str__
-       date2 = other.__str__
-        
-        for i in range(0,11):
+        for i in (10):
+            if d1[i] < d2[i]:
+                return  self.toString+' is before '+other.toString
+            elif d1[i] > d2[i]:
+                return self.toString+' is after '+other.toString
             
-            if int(date1[i]) > int(date2[i]):
-                
-                return 'After'
-            
-            elif int(date2[i]) > int(date1[i]):
-                
-                return 'Before'
-            
-            
-            
-        return 'Equal'
-    
+        return self.toString+' is the same as '+other.toString
     
 class Counter(object):
-    
-    def __init__(self, ide):
-        self.ide = ide
-    
-    
-    def increment:
-        self.ide += 1
+    def __init__(self, ID):
+        self.ID = ID
+        self.c = 0
         
-    def sinceCreation:
+    def increase(self):
+        self.c += 1
         
-        return self.ide
+    def getIncreases(self):
+        return self.c
     
-    def __str__(self):
-        
-        return self.ide
-        
-            
+    def toString(self):
+        return self.ID +': '+ self.c
         
