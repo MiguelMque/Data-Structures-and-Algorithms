@@ -35,7 +35,7 @@ class Date(object):
         self.year = year
         
     def toString(self):
-        return year+'-'+month+'-'+day
+        return str(year)+'-'+str(month)+'-'+str(day)
     
     def compare(self, other):
         d1 = self.toString
@@ -61,5 +61,5 @@ class Counter(object):
         return self.c
     
     def toString(self):
-        return self.ID +': '+ self.c
+        return str(self.ID) +': '+ str(self.c)
         
