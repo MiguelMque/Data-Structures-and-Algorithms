@@ -12,7 +12,7 @@ def gcd(a, b):
 
 
 
-#PUNTO 2.1
+#PUNTO 2 v1
 def check_w(w, l):
 
     b = False
@@ -24,7 +24,7 @@ def check_w(w, l):
       other = other or check_w(remaining)
     
     return other
-#PUNTO 2.2
+#PUNTO 2 v2
 def check_w2(n, l, w):
     if n == len(l):
         return (w == 0)
