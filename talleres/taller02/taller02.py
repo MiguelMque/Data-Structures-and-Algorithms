@@ -33,7 +33,7 @@ def check_w2(n, l, w):
     return False
 
 
-#PUNTO 3
+#PUNTO 3 v1
 def combinations(sequence):
     
     if len(sequence) == 1:
@@ -67,5 +67,16 @@ def print_possibilities(l):
     
     return n
         
+#PUNTO 3 v2
+def comb(prefix, s):
+    if len(s) == 0:
+        print(prefix)
+    else:
+        comb(prefix+s[0], s[1:])
+        comb(prefix, s[1:])
 
+def combinations(s):
+    comb("", s)
+
+print(combinations("abc"))
     
