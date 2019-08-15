@@ -7,7 +7,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-#EXCERCISE 1
+#EXCERCISE 1. this algorith is not suitable for big data bases because the time that it takes to make all the processes
+#             grows in an exponential way
 def insertionSort(arr):
 
     for i in range(0, len(arr)):
@@ -22,7 +23,9 @@ def insertionSort(arr):
     return arr
     #O(n^2)
 
-#EXCERCISE 2
+#EXCERCISE 2. Between this algoritm using recursion and loops, there is a significant diference in the time the pc runs it; the
+#             algorithm using loops is faster than the algorithm using recursion, the reason is that recursion uses a lot more
+#             space in the RAM than the for loop in this algorithm
 def ar_sum(arr):
     sum = 0
     for i in range(len(arr)):
