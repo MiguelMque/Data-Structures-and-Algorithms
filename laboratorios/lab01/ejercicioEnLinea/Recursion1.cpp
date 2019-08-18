@@ -24,8 +24,8 @@ string allStar(string str){
 }
 
 
-bool array220(int *nums, int index){
-	if(index == sizeof(nums)-1 || sizeof(nums) == 0) return false;
+bool array220(vector<int> nums, int index){
+	if(index == nums.size()-1 || nums.size() == 0) return false;
 	
 	if(nums[index]*10 == nums[index+1]) return true;
 
@@ -65,11 +65,11 @@ int main(){
 	cout << "Input: hello" << endl;
 	cout << "Output: " << allStar("hello") << endl << endl;
 
-	int nums[] = {1, 2, 3, 4, 40};
+	vector <int> vector{1, 2, 3, 4, 40};
 	
 	cout << "''Array220''" << endl;
 	cout << "Input: {1, 2, 3, 4, 40}" << endl;
-	cout << "Output: " <<  array220(nums, 0) << endl << endl;
+	cout << "Output: " <<  array220(vector, 0) << endl << endl;
 	
 	cout << "''CountHi2''" << endl;
 	cout << "Input: hixhhi" << endl;
