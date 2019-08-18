@@ -6,12 +6,6 @@ using namespace std;
 string str1 = "STRONGEST";
 string str2 = "LONGEST";
 
-
-const int n = str1.length();
-
-const int m = str2.length();
-
-
 int memo[9][7] = {}; //Array size declared since has to be constant
 
 
@@ -19,21 +13,21 @@ int memo[9][7] = {}; //Array size declared since has to be constant
 int lcs(string A, string  B, int i, int j){
 
 	if(memo[i][j] != 0){  
-	return memo[i][j];
+		
+		return memo[i][j];
 	}
 
 	if(j == 0 || i == 0){ //Base case
-	return 0;
+		
+		return 0;
 	}
 
 
 	else if(A[i-1]==B[j-1]){
 
-	return 1 + lcs(A, B, i-1, j-1);
+		return 1 + lcs(A, B, i-1, j-1);
 	} else {
-
 	int r = max(lcs(A, B, i-1, j), lcs(A, B, i, j-1));
-
 	memo[i][j] = r;
 
 	return r;
