@@ -1,3 +1,12 @@
+/**
+ * @file lcs
+ * @version 1.1
+ * @date 18/08/2019
+ * @author Miguel Ángel Correa Manrique
+ * @title Largest Common Subsequence
+ */
+
+
 #include <bits/stdc++.h> 
 #include <string>
 
@@ -8,7 +17,15 @@ const int cons = 10000;
 
 int r;
 
-//Memoized function
+/**
+ *@brief Indicates the largest common subsequence given two sequences.
+ *@param[A] First given subsequence.
+ *@param[B] Second given subsequence.
+ *@param[i] Initializator, must start in 0.
+ *@param[j] Initializator, must start in 0.
+ *@param[memo] To do memoization, needed, must be initialized for rows the size of A and columns a constant defined as 10000.
+ *@return Returns the largest common subsequence of A and B (does not have to be contiguos).
+ */
 int lcs(string A, string  B, int i, int j, int memo[][cons]){
 	
  	if(memo[i][j] != -1){ 
