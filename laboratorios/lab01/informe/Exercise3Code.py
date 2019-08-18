@@ -3,7 +3,7 @@
 Lab 01 Estructura datos y algorítmos
 """
 
-#Excercise 3.2
+#Exercise 3.2
 import time
 import numpy as np
 import matplotlib.pyplot as plt
