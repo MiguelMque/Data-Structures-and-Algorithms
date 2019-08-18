@@ -1,52 +1,114 @@
-#include <iostream>
+#include <bits/stdc++.h> 
 #include <string>
+
 
 using namespace std;
 
-string str1 = "STRONGEST";
-string str2 = "LONGEST";
+const int cons = 10000;
 
-int n = str1.length();
-int m = str2.length();
-
-int memo[9][7] = {}; //Array size declared since has to be constant
-
+int r;
 
 //Memoized function
-int lcs(string A, string  B, int i, int j){
-
-	if(memo[i][j] != 0){  
-		
-		return memo[i][j];
-	}
-
-	if(j == 0 || i == 0){ //Base case
-		
-		return 0;
+int lcs(string A, string  B, int i, int j, int memo[][cons]){
+	
+ 	if(memo[i][j] != -1){ 
+	       	return	memo[i][j];
 	}
 
 
-	else if(A[i-1]==B[j-1]){
+	if(A[i] == '.' || B[j] == '.'){ //Base case
+		r = 0;
 
-		return 1 + lcs(A, B, i-1, j-1);
-	} else {
-	int r = max(lcs(A, B, i-1, j), lcs(A, B, i, j-1));
+	}
+	
+	else if (A[i]==B[j]){
+		r =  1 + lcs(A, B, i+1, j+1, memo);
+	}
+
+        else { 
+		r = max(lcs(A, B, i+1, j, memo), lcs(A, B, i, j+1, memo));
+	}
+
 	memo[i][j] = r;
 
 	return r;
-	}
-	
 }
 
 
 
 
 int main(){
+	
+	string str1;
+	string str2;
 
-	printf("Largest Common Subsequence: %d", lcs(str1, str2, n, m));
+	cout << "Enter your first sequence: ";
+	cin >> str1;
 
+	cout << "Enter your second sequence: ";
+	cin >> str2;
+	
+	str1 = str1 + ".";
+	str2 = str2 + ".";
+
+	int i = str1.length();
+	int j = str2.length();
+	
+	cout << "Length str1 : " << i << endl;
+	cout << "Length str2 : " << j << endl;
+		
+	int memo[i+1][cons];
+
+	memset(memo, -1, sizeof(memo));
+	
+	cout << "Size of your Largest Common Sequence: " << lcs(str1, str2, 0, 0, memo) << endl;
+
+
+	return 0;
+	
 
 }
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
 
 
 
