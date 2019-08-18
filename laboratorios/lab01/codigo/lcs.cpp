@@ -6,6 +6,9 @@ using namespace std;
 string str1 = "STRONGEST";
 string str2 = "LONGEST";
 
+int n = str1.length();
+int m = str2.length();
+
 int memo[9][7] = {}; //Array size declared since has to be constant
 
 
