@@ -20,6 +20,7 @@ string allStar(string str, size_t n){
 
 string allStar(string str){
 	return allStar(str,0);
+
 }
 
 
@@ -30,10 +31,33 @@ bool array220(int *nums, int index){
 
 	else return false || array220(nums, index+1);	
 	
-	
-	
-	
 }
+
+string reverseString(string str){
+	int n = str.length();
+
+	for(int i = 0; i< n/2; i++){
+
+	swap(str[i], str[n-1-i]);
+
+	}
+
+	return str;
+}
+
+int countHi2(string str){
+	int index = str.find("ih");
+	if(index == -1) return 0;
+	else{
+		if(index + 2 >= str.length()) return 1;
+		else{
+			if(str[index+2] != 'x') return 1 + countHi2(str.substr(index+2));
+			else return 0 + countHi2(str.substr(index+3));
+		}
+	}
+
+}
+
 
 int main(){
 
@@ -45,8 +69,10 @@ int main(){
 	
 	cout << "''Array220''" << endl;
 	cout << "Input: {1, 2, 3, 4, 40}" << endl;
-	cout << "Output: " <<  array220(nums, 0) << endl;
-
-
+	cout << "Output: " <<  array220(nums, 0) << endl << endl;
+	
+	cout << "''CountHi2''" << endl;
+	cout << "Input: hixhhi" << endl;
+	cout << "Output: " << countHi2(reverseString("hixhhi")) << endl;
 return 0;
 }
