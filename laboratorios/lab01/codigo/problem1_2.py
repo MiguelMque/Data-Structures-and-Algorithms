@@ -1,7 +1,7 @@
 def rect(n):
     '''
-    Return the number of ways how one can organize 1x2 rectangles in a 2xn rectangle. 
-
+    Return the number of ways how one can organize 1x2 
+    rectangles in a 2xn rectangle. 
     '''
     if n == 1 or n == 2:
         return n
