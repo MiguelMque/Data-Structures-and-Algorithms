@@ -82,6 +82,13 @@ class ArrayList{
 		}
 
 
+		int get(int i){
+
+		return arr[i];
+
+		}
+
+
 		void print(){
 
 			cout << "[ ";
@@ -247,7 +254,6 @@ void sequence(int n){
 
 
 int main(){
-
 
 
 }
