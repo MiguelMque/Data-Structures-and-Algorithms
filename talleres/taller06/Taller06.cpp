@@ -111,7 +111,6 @@ int main(){
 
 	myArray.print();
 
-	myArray.printAll();
 
 
 }
