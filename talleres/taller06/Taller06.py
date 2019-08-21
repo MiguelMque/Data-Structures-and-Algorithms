@@ -1,72 +1,64 @@
+"""
+@author Miguel Angel Correa Manrique - Pablo Buitrago Jaramillo
+Taller06 Estructura datos y algorítmos
+"""
 import numpy as np
 
-
-
-
-class ArrayList(object):
-        
+#Exercise 1
+class ArrayList:
 
     def __init__(self):
-        self.size = 0;
-        self.DEFAULT_SIZE = 4
-        self.elements = np.empty(self.DEFAULT_SIZE, int)
-        
+        self.size = 0
+        self.DEFAULT_CAPACITY = 4
+        self.elements = np.empty(self.DEFAULT_CAPACITY, int)
+
+    def incrementDEFAULT_CAPACITY(self):
+        self.DEFAULT_CAPACITY = self.DEFAULT_CAPACITY*2
 
     def size(self):
         return self.size
 
+    def getValue(self, index):
+        try:
+            return self.elements[index]
+        except ValueError:
+            print('Value not found')
+    
+
     def add(self, x):
-        self.size = self.size + 1
-
-        if self.DEFAULT_SIZE > self.size:
+        self.size = self.size+1
+        if self.DEFAULT_CAPACITY > self.size:
             self.elements[self.size-1] = x
-
-
+        
         else:
-
-            self.DEFAULT_SIZE = self.DEFAULT_SIZE*2
-
-            elements2 = np.empty(self.DEFAULT_SIZE, int)
+            ArrayList.incrementDEFAULT_CAPACITY(self)
+            elements2 = np.empty(self.DEFAULT_CAPACITY, int)
             
-
-
             for i in range(0, self.size):
                 elements2[i] = self.elements[i]
-
-
-
-            elements2[self.size-1] = x
-
-            self.elements = elements2
             
-
-
-    
-    def addInIndex(self, x, index):
-        self.size = self.size + 1
-
-
-        if self.DEFAULT_SIZE > self.size:
-
-            elements2 = np.empty(self.DEFAULT_SIZE, int)
-
-            for i in range(0, index):
-                elements2[i] = self.elements[i]
-
-
-            elements2[index] = x
-
-
-            for i in range(index+1, self.size):
-                elements2[i] = self.elements[i]
-
+            elements2[self.size-1] = x
             self.elements = elements2
 
 
+    def addInIndex(self, index, x):
+        self.size = self.size+1
+        if self.DEFAULT_CAPACITY > self.size:
+            elements2 = np.empty(self.DEFAULT_CAPACITY, int)
+            
+            for i in range(0, index):
+                elements2[i] = self.elements[i]
+            
+            elements2[index] = x
+            
+            for i in range(index+1, self.size):
+                elements2[i] = self.elements[i]
+            
+            self.elements = elements2
+        
         else:
-            self.DEFAULT_SIZE = self.DEFAULT_SIZE*2
-
-            elements2 = np.empty(self.DEFAULT_SIZE, int)
+            ArrayList.incrementDEFAULT_CAPACITY(self)
+            elements2 = np.empty(self.DEFAULT_CAPACITY, int)
 
             for i in range(0, index):
                 elements2[i] = self.elements[i]
@@ -78,34 +70,16 @@ class ArrayList(object):
 
             self.elements = elements2
 
+    def deleteChar(self, index):
+        self.size = self.size-1
+        self.elements[self.size+1] = 0
 
-    def incrementDS(self):
-        self.DEFAULT_SIZE = self.DEFAULT_SIZE*2
- 
+        for i in range(index, self.size+1):
+            self.elements[i] = self.elements[i+1]
 
 
     def toString(self):
         return self.elements
-
-
-    def getValue(self, index):
-
-        for 
-
-
-         
-    
-element = ArrayList()
-
-element.add(2)
-element.add(3)
-element.add(4)
-element.add(5)
-element.addInIndex(100, 2)
-
-print(element.toString())
-
-
 
 
 
