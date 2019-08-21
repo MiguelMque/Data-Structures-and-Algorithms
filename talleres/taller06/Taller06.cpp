@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <string>
 
 using namespace std;
 
@@ -24,7 +25,7 @@ class ArrayList{
 
 				DEFAULT_SIZE = DEFAULT_SIZE*2;
 
-				int *arr2; //Why doesn't work with arr2[DEFAULT_SIZE]
+				int *arr2; //Why doesn't work with arr2[DEFAULT_SIZE] (?)
 
 				arr2 = new int[DEFAULT_SIZE];
 				
@@ -162,17 +163,90 @@ void readArray(ArrayList myArray){
 }
 
 
-int main(){
 
-	ArrayList myArray;
+class ArrayListString{
+	public:
+		int DEFAULT_SIZE = 4;
+                int size;
+                string *arr;
+
+
+	void Init(){
+
+		size = 0;
+		arr = new string[DEFAULT_SIZE];
+
+
+	}
+
+
+       	void add(string x){
+        	size += 1;
+
+                if(size >= DEFAULT_SIZE){
+
+                	 DEFAULT_SIZE = DEFAULT_SIZE*2;
+
+                         string *arr2; 
+
+                         arr2 = new string[DEFAULT_SIZE];
+
+                         for(int i = 0; i < size; i++) arr2[i] = arr[i];
+
+                         	arr2[size-1] = x;
+
+                                arr = arr2;
+
+                        } else arr[size-1] = x;
+
+                }
+
+
+	void print(){
+	
+                        cout << "[ ";
+
+                        for(int i = 0; i < size; i++) cout << arr[i] << "       ";
+
+                        cout << "]" << endl;
+
+	
+	}
+	
+
+
+
+};
+
+
+
+
+//Optional #3 Sequence
+void sequence(int n){
+	ArrayListString myArray;
 	myArray.Init();
 
+	string str;
 
 
-	readArray(myArray);
+	for(int i = 1; i <= n; i++){
+		str = "";
+		for(int j = 1; j<=i; j++){
+				
+			 str+= to_string(j) + ", ";
+
+		}
+		
+	myArray.add(str);
+
+	}
+
+	myArray.print();	
+
+}
 
 
-
+int main(){
 
 
 
