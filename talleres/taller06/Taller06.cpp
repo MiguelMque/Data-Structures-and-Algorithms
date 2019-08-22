@@ -105,6 +105,7 @@ class ArrayList{
 
 
 		//Optional #2 addReverse Algorithm
+		//Time complexity, because of amortization it is O(1), therefore adding n characters it is O(n)
 		void addReverse(int x){
 			size += 1;
 
@@ -149,6 +150,7 @@ class ArrayList{
 
 
 //Optional #2 Reader
+//Time complexity O(n)
 void readArray(ArrayList myArray){
 	int x;
 	while(true){
