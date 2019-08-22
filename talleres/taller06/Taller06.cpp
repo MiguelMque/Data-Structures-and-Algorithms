@@ -17,7 +17,7 @@ class ArrayList{
 			arr = new int[DEFAULT_SIZE];
 		}
 
-		//The asymptotic complexity for this method is O(n), so using this algorithm on a text editor is viable. The asymptotyc 
+		//The asymptotic complexity for this method is O(n), so using this algorithm on a text editor is not the most suitable option. The asymptotyc 
    		// complexcity to add n characters is O(n^n)
 		void add(int x){	
 			size += 1;	
@@ -40,7 +40,7 @@ class ArrayList{
 
 		}
 
-		//The asymptotic complexity for this method is O(n^2), so using this algorithm on a text editor is viable. The asymptotyc 
+		//The asymptotic complexity for this method is O(n^2), so using this algorithm on a text editor is not the most suitable option. The asymptotyc 
    		// complexcity to add n characters is O(n^n)
 		void addInIndex(int x, int index){
 
