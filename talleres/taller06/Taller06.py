@@ -24,8 +24,8 @@ class ArrayList:
         except ValueError:
             print('Value not found')
     
-    #The asymptotic complexity for this method is O(n), so using this algorithm on a text editor is not the most suitable option. The asymptotyc 
-    # complexcity to add n characters is O(n^n)
+    #The asymptotic complexity for this method is O(1). The asymptotyc complexcity to add n characters is O(n)
+   	#so using this algorithm on a text editor is not the most suitable option
     def add(self, x):
         self.size = self.size+1
         if self.DEFAULT_CAPACITY > self.size:
@@ -41,8 +41,8 @@ class ArrayList:
             elements2[self.size-1] = x
             self.elements = elements2
 
-    #The asymptotic complexity for this method is O(n^2), so using this algorithm on a text editor is not the most suitable option. The asymptotyc 
-    # complexcity to add n characters is O(n^n)
+    #The asymptotic complexity for this method is O(n). The asymptotyc complexcity to add n characters is O(n^2)
+   	#so using this algorithm on a text editor is not the most suitable option
     def addInIndex(self, index, x):
         self.size = self.size+1
         if self.DEFAULT_CAPACITY > self.size:
