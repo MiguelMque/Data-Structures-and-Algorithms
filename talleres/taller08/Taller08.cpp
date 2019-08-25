@@ -2,7 +2,6 @@
 #include <stack>
 #include <queue>
 #include <string>
-#include <ctype.h>
 #include <sstream>
 using namespace std;
 
@@ -196,19 +195,61 @@ void point2(vector <Store> solicitudList, Store warehouse){
 
 
 
+//Recursive method to reverse a stack
 
+stack <int> reverseStackHelper(stack<int>s, stack <int> s2){
+
+	if(s.empty()){
+	return s2;
+	}
+
+	int a = s.top();
+	s.pop();
+	s2.push(a);
+
+		
+	return reverseStackHelper(s, s2);
+
+}
+
+
+stack <int> reverseStack(stack <int> s){
+        stack<int> s2;
+
+        return reverseStackHelper(s, s2);
+
+}
+
+
+
+
+
+//Optional #4
+void service(queue <string> list){
+	cout << "Service method" << endl;
+
+	while(!list.empty()){
+		cout << "Serving " << list.front() << endl;
+		list.pop();
+	}
+
+
+
+
+}
 
 
 int main(){
 
+	cout << "POLISH CALCULATOR" << endl;
+	cout << "Result of 6 5 - 4 + = " << polishNotationCalculator("6 5 - 4 +") << endl << endl; 
+
 
 	vector <Store> solicitudList;
-	//cout <<	polishNotationCalculator("6 5 - 4 +");	
-
-
 	Store warehouse;
 
 	Fridge f;
+
 	for(int i = 0; i <= 10; i++){
 		
 		f.setCode(i);
@@ -237,6 +278,56 @@ int main(){
 	solicitudList.push_back(eafit2);
 
 	point2(solicitudList, warehouse);
+	
+	cout << endl << endl;
+		
+
+	stack <int> s;
+
+	for(int i = 0; i <= 9; i++){
+
+		s.push(i);
+
+
+
+	}
+
+	cout << "Original stack" << endl;
+
+	stack <int> s2 = s;
+
+	while(!s2.empty()){
+
+        cout << s2.top();
+        s2.pop();
+
+
+        }
+
+	cout << endl;
+       s =  reverseStack(s);
+	
+      	cout << "Reverse stack" << endl;
+
+	while(!s.empty()){
+
+	cout << s.top();
+	s.pop();
+
+
+	}
+
+	cout << endl << endl;
+
+
+	queue <string> friends;
+
+	friends.push("Pablo");
+	friends.push("Jesús");
+	friends.push("David");
+
+	service(friends);
+
 
 	return 0;
 
