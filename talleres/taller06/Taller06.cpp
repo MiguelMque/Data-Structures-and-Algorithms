@@ -17,7 +17,8 @@ class ArrayList{
 			arr = new int[DEFAULT_SIZE];
 		}
 
-
+		//The asymptotic complexity for this method is O(1). The asymptotyc complexcity to add n characters is O(n)
+   		// so using this algorithm on a text editor is not the most suitable option
 		void add(int x){	
 			size += 1;	
 		
@@ -39,7 +40,8 @@ class ArrayList{
 
 		}
 
-
+		//The asymptotic complexity for this method is O(n). The asymptotyc complexcity to add n characters is O(n^2)
+   		// so using this algorithm on a text editor is not the most suitable option
 		void addInIndex(int x, int index){
 
 			size += 1;
@@ -103,6 +105,7 @@ class ArrayList{
 
 
 		//Optional #2 addReverse Algorithm
+		//Time complexity, because of amortization it is O(1), therefore adding n characters it is O(n)
 		void addReverse(int x){
 			size += 1;
 
@@ -147,6 +150,7 @@ class ArrayList{
 
 
 //Optional #2 Reader
+//Time complexity O(n)
 void readArray(ArrayList myArray){
 	int x;
 	while(true){
