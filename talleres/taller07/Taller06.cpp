@@ -2,15 +2,14 @@
 using namespace std;
 
 
+struct Node{
+	int data;
+	Node *next;
+
+};
 
 
 class LinkedList{
-	private:
-
-		struct Node{
-			int data;
-			Node *next;
-		};
 
 		Node *head;
 		Node *tail;
@@ -24,12 +23,15 @@ class LinkedList{
 		}
 
 		void insert(int, int);
-		void insertOneValue(int);
+		void insertTop(int);
 		void print();
-			
+		void remove(int);
+		int get(int);
+		int size();
+		Node getNode(int);	
 };
 
-void LinkedList::insertOneValue(int x){
+void LinkedList::insertTop(int x){
 
 	Node *temp = new Node;
 
@@ -96,7 +98,36 @@ void LinkedList::insert(int x, int index){
 
 }
 
+
+
+void LinkedList::remove(int index){
+
+	Node *s = head;
+	Node *temp = new Node;
+	Node *temp2 = new Node;
+	
+	if(index == 0){
+	head = s->next;
+	s = NULL;
+
+	} else	{
+
+		for(int i = 0; i < index; i++){
+			temp = s;
+			s = s->next;
+			temp2 = s->next;
+		}
+
+		s = NULL;
+		temp->next = temp2;
+
+	}
+}
+
+
+
 void LinkedList::print(){
+
 
 
 	Node *temp = head;
@@ -111,23 +142,93 @@ void LinkedList::print(){
 
 }
 
+Node LinkedList::getNode(int index){
+
+	Node *s = head;
+
+	for(int i = 0; i < index; i++){
+
+		s = s->next;
+
+	}
+
+
+	return *s;
+
+
+
+}
+
+
+int LinkedList::get(int index){
+
+
+        Node *s = head;
+
+        for(int i = 0; i < index; i++){
+
+                s = s->next;
+
+        }
+
+
+        return s->data;
+
+
+
+}
+
+bool constains(int data){
+
+
+	Node 
+
+
+}
+
+
+int LinkedList::size(){
+
+	Node *s = head;
+
+	int i = 0;
+
+	while(s!=NULL){
+		i++;
+		s = s->next;
+
+	}
+
+	return i;
+
+}
+
+
+
+
 
 int main(){
-
-
-
 
 	LinkedList List;
 
 	for(int i = 1; i <= 10; i++){
 
-		List.insertOneValue(i);
+		List.insertTop(i);
 	}
 
 	List.insert(1000, 3);
 
+	
+	
+	List.remove(0);
+
 
 	List.print();
+
+
+	 cout << List.get(9) << endl;
+
+	 cout << List.size() << endl;
 
 	return 0;
 }
