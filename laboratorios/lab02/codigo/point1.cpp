@@ -42,31 +42,18 @@ void mergeSort(int arr[], int n){
 	int L[mid];
 	int R[n-mid];
 
-	for(int i = 0; i < mid-1; i++){
-	       
+	for(int i = 0; i < mid; i++){
 		L[i] = arr[i];
 	
-		cout << "Metiendo elemento " << arr[i]; "en L[i] de tamaño " << mid;
-	
 	}
 
-	for(int i = mid-1; i < n-1; i++){       
-	
-	
-		R[i] = arr[i];
-		cout << "Metiendo elemento " << arr[i]; "en R[i] de tamaño " << n-mid;
-	
-	
-	
+	for(int i = 0; i < n-mid; i++){       
+		R[i] = arr[mid+i];
 	}
 	
-	
-
-	mergeSort(L, mid;
+	mergeSort(L, mid);
 	mergeSort(R, n-mid);
 	merge(L, R,  arr, mid, n-mid);
-
-
 }
 
 
@@ -96,3 +83,5 @@ int main(){
 
 
 }
+
+
