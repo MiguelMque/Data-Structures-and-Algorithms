@@ -65,7 +65,44 @@ public class Array2{
 
 
 
-	//Inserta el demás código aquí Pablo
+	public int bigDiff(int[] nums) {
+  		int max = nums[0];
+  		int min = nums[0];
+  
+  		for(int i = 0; i < nums.length; i++)
+  		{
+    			max = Math.max(max, nums[i]);
+    			min = Math.min(min, nums[i]);
+  		}
+  		return max - min;
+	}
+	
+	public boolean has12(int[] nums) {
+  		boolean one = false;
+ 		boolean two = false;
+  		for(int i=0; i<nums.length; i++){
+    			if(nums[i] == 1){
+     				one = true;
+     				for(int j = i; j<nums.length; j++){
+        				if(nums[j] == 2) two = true;
+      				}
+    			}
+  		}
+  		return (one && two);
+	}
+
+
+	
+	public String[] fizzBuzz(int start, int end) {
+  		String[] array = new String[end - start];
+  		for(int i = start; i<end; i++){
+    			if(i%3 == 0 && i%5 == 0) array[i-start] = "FizzBuzz";
+    			else if(i%3 == 0) array[i-start] = "Fizz";
+    			else if(i%5 == 0) array[i-start] = "Buzz";
+    			else array[i-start] = String.valueOf(i);
+  		}
+  		return array;
+	}
 
 }
 
