@@ -14,6 +14,7 @@ using namespace std;
  *@brief Arranges an array, given the array and its size.
  *@param[arr] Given array.
  *@param[n] Array length.
+ *@return Void.
  * */
 void insertionSort(int arr[], int n){
 	for(int i = 0; i < n; i++){
@@ -35,12 +36,13 @@ void insertionSort(int arr[], int n){
 
 
 /**
- *@brief Arranges two arrays already sorted into a new big one array cointer of both.
+ *@brief Arranges two arrays already sorted into a new big one array cointer of both arranged.
  *@param[L] First array sorted.
  *@param[R] Second array sorted.
  *@param[arr] The array that is going to contain the values of L and R sorted.
  *@param[nL] Length of the first array.
  *@param[nR] Length of the second array.
+ *@return Void.
  */
 void merge(int L[], int R[], int arr[], int nL, int nR){
 
