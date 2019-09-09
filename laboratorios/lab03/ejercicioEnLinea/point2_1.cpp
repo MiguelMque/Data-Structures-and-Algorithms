@@ -2,19 +2,18 @@
 #include <list>
 using namespace std;
 
-
-
-
 void point1(string str){
 
 	list<char> myList;
 	list<char>::iterator it;
 	bool start;
+	
 
 	for(char& c : str){
 
+		it = myList.begin();
+
 		if(c == '['){
-			it = myList.begin();
 		       	start = 1;
 		}
 
@@ -35,7 +34,19 @@ void point1(string str){
 	}
 
 	cout << endl;
+
 }
 
 int main(){
+	
+	string x;
+
+	while(cin >> x){
+
+
+	point1(x);
+
+
+	}
+
 }
