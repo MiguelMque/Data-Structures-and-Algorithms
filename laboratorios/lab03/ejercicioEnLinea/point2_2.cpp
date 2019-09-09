@@ -89,21 +89,6 @@ void putBlock(list<stack<int>> *myList, int *pos, int a, int b){
 
 }
 
-
-vector<int> reverseStack(stack<int> s){
-	
-	vector<int> v;
-
-	while(!s.empty()){
-		v.push_back(s.top());
-		s.pop();
-	}
-
-
-	return v;
-
-}
-
 void pile(list<stack<int>> *myList, int *pos, int a, int b){
 
 	list<stack<int>>::iterator it = (*myList).begin();
