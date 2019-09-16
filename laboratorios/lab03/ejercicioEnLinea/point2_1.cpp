@@ -5,15 +5,14 @@ using namespace std;
 void point1(string str){
 
 	list<char> myList;
-	list<char>::iterator it;
-	bool start;
-	
+	bool start = 0;
+	myList.erase(myList.begin(), myList.end());
+	list<char>::iterator it = myList.begin();
 
 	for(char& c : str){
 
-		it = myList.begin();
-
 		if(c == '['){
+			it = myList.begin();
 		       	start = 1;
 		}
 

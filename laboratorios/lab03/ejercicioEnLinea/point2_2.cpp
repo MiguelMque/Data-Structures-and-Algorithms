@@ -4,16 +4,15 @@
 #include <vector>
 
 
-
 using namespace std;
 
-void returnAbove(vector<stack<int>> *v, int x, int *pos){
+void returnAbove(stack<int> *v, int x, int *pos){
 	
-	while((*v)[pos[x]].top() != x){
-		int val = (*v)[pos[x]].top();
-		(*v)[val].push(val);
+	while(v[pos[x]].top() != x){
+		int val = v[pos[x]].top();
+		v[val].push(val);
 		pos[val] = val;
-		(*v)[pos[x]].pop();
+		v[pos[x]].pop();
 	}	
 
 
@@ -28,12 +27,12 @@ int main(){
 	string option;
 	cin >> n;
 	int pos[n];
-	vector<stack<int>> v;
+	stack<int> v [n];
 
 		for(int i = 0; i < n; i++){
 			stack<int> s;
 			s.push(i);
-			v.push_back(s);
+			v[i] = s;
 			pos[i] = i;
 		}
 
@@ -49,22 +48,22 @@ int main(){
 		if(a==b || pos[a] == pos[b]){
 
 		} else if (command == "move" && option == "onto"){
-			returnAbove(&v, a, pos);
-			returnAbove(&v, b, pos);
+			returnAbove(v, a, pos);
+			returnAbove(v, b, pos);
 
 			v[pos[a]].pop();
 			v[pos[b]].push(a);
 			pos[a] = pos[b];
 	
 		} else if (command == "move" && option == "over"){
-			returnAbove(&v, a, pos);	
+			returnAbove(v, a, pos);	
 
 			v[pos[a]].pop();
 			v[pos[b]].push(a);
 			pos[a] = pos[b];
 
 		} else if(command == "pile" && option == "onto"){
-			returnAbove(&v, b, pos);
+			returnAbove(v, b, pos);
 
 			while(v[pos[a]].top() != a){
 				int val = v[pos[a]].top();
@@ -106,7 +105,7 @@ int main(){
 
 	stack<int> helper;
 	
-	for(int i = 0; i < v.size(); i++){
+	for(int i = 0; i < n; i++){
 		cout << i << ":";
 		while(!v[i].empty()){
 			helper.push(v[i].top());
