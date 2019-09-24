@@ -25,7 +25,7 @@ class BinaryTree{
 };
 
 
-
+//The time complexity for this algorithm is O(n) for worst case scenario.
 void BinaryTree::add(int x){
     
     Node *temp = new Node;
@@ -62,6 +62,7 @@ void BinaryTree::add(int x){
 
 }
 
+//The time complexity for this algorithm is O(n) for worst case scenario.
 bool BinaryTree::search(int x){
     
     Node *s = root;
