@@ -27,13 +27,16 @@ class Heap{
         int left(int i){ return (2*i + 1); }
         int right(int i){ return (2*i + 2); }
 
-        bool EmptyHeap();        
+        bool empty();        
         void insert(int);
         int first();
         int peek();
         void Heapy(int);
                 
 };
+
+
+bool Heap::empty(){if(e<=0) return true; else false;}
 
 void Heap::insert(int x){
 
@@ -75,12 +78,6 @@ void Heap::Heapy(int i){
 
 int Heap::peek(){
 
-    if(e <= 0){
-        cout << "0 Elements in the heap" << endl;
-        exit(-1);
-
-    }
-
     if(e == 1){
         e--;
         return heap[0];
@@ -107,5 +104,9 @@ int main(){
     cout << h.peek() << endl;
     cout << h.peek() << endl;
     cout << h.peek() << endl;
+    cout << h.empty() << endl;
+
+    h.insert(5);
+
     cout << h.peek() << endl;
 }
