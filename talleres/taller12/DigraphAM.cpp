@@ -4,7 +4,6 @@
 using namespace std;
 
 void DigraphAM::addArc(int source, int destination, int weigth){    
-    n++;
     matrix[source][destination] = weigth;
 }
 

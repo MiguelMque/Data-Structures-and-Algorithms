@@ -5,10 +5,8 @@ using namespace std;
 class DigraphAM: public Digraph{
     public:
         int** matrix;
-        int n;
     
         DigraphAM(int s){ 
-            n = 0;
             size = s;
             matrix = new int*[size];
 
